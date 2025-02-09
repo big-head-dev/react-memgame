@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect } from 'react'
-import './MemoryGame.css'
 import { FisherYatesShuffle } from '../../utils/randomize'
 
 const MemoryGame = () => {

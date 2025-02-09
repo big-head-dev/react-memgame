@@ -1,13 +1,12 @@
-import MemoryGame from "./components/MemoryGame";
-import StockTracker from "./components/Stocks";
-
+import MemoryGame1 from './features/memory1/MemoryGame'
+import MemoryGame2 from './features/memory2/MemoryGame'
 function App() {
   return (
     <>
-      <MemoryGame />
-      <StockTracker />
+      <MemoryGame1 />
+      <MemoryGame2 />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

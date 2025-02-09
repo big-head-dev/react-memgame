@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react'
-import './MemoryGame.css'
 import { FisherYatesShuffle } from '../../utils/randomize'
+import { Card } from './components/Card'
+import { StatusBar } from './components/StatusBar'
 
 const MemoryGame = () => {
   const levelMultipler = 2
@@ -80,22 +81,20 @@ const MemoryGame = () => {
 
   return (
     <div className="memory-game">
-      <h2>Memory Game</h2>
-      <div className="level">
-        Level {level} <button onClick={() => handleChangeLevel(1)}>⬆️</button>
-        <button onClick={() => handleChangeLevel(-1)}>⬇️</button>
-      </div>
-      <div className="moves">Moves: {numMoves}</div>
+      <StatusBar
+        title={'Memory Game #2'}
+        currentLevel={level}
+        numOfMoves={numMoves}
+        onChangeLevel={handleChangeLevel}
+      />
       <div className="game-board">
         {cards.map((card) => (
-          <div
+          <Card
             key={card.id}
-            className={`card ${card.flipped ? 'flipped' : ''} ${card.matched ? 'matched' : ''}`}
-            onClick={() =>
-              flippedCardIds.length < 2 && !card.flipped && !card.matched && handleCardFlip(card.id)
-            }>
-            {card.flipped || card.matched ? card.content : cardFront}
-          </div>
+            card={card}
+            canFlip={flippedCardIds.length < 2 && !card.flipped && !card.matched}
+            onCardFlip={handleCardFlip}
+          />
         ))}
       </div>
       {gameWon && (

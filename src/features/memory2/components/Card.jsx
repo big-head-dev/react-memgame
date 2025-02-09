@@ -1,12 +1,10 @@
-const Card = (card, canFlip, handleCardFlip) => {
+export const Card = ({ card, canFlip, onCardFlip }) => {
   return (
     <div
       key={card.id}
       className={`card ${card.flipped ? 'flipped' : ''} ${card.matched ? 'matched' : ''}`}
-      onClick={() => canFlip && handleCardFlip(card.id)}>
-      {card.flipped || card.matched ? card.content : cardFront}
+      onClick={() => canFlip && onCardFlip(card.id)}>
+      {card.flipped || card.matched ? card.content : '❓'}
     </div>
   )
 }
-
-export default Card
