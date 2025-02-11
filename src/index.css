@@ -35,21 +35,27 @@ h1 {
     padding: 10px;
   }
   .card {
-    border-radius: 1rem;
-    width: 6rem;
-    height: 6rem;
-    background-color: #f0f0f033;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 4px 0px black;
+    width: 6rem;
+    height: 6rem;
+    background-color: #f0f0f033;
     font-size: 3rem;
     cursor: pointer;
 
+    transition: transform 0.3s;
+
     &.flipped {
+      transform: rotateY(180deg);
       background-color: #7fffd433;
+      box-shadow: -2px 2px 4px 0px black;
     }
 
     &.matched {
+      transition: none;
       background-color: #90ee9033;
     }
   }

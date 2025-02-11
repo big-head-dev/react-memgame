@@ -82,7 +82,7 @@ const MemoryGame = () => {
   return (
     <div className="memory-game">
       <StatusBar
-        title={'Memory Game #2'}
+        title={'Memory Game #3'}
         currentLevel={level}
         numOfMoves={numMoves}
         onChangeLevel={handleChangeLevel}
